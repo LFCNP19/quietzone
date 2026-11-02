@@ -1,0 +1,3 @@
+interface:
+  display_name: "PYNQ Overlay Bring-up"
+  short_description: "Load and verify a Vivado overlay on PYNQ, then drive it from a register contract."

@@ -1,0 +1,3 @@
+interface:
+  display_name: "PYNQ DMA Golden Verify"
+  short_description: "Move data with PYNQ DMA, handle cache coherency, compare against golden and emit a report."

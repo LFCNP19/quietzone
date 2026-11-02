@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>静域 QuietZone · 四麦克风声源定位</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="brandline">
+      <div class="mark">QZ</div>
+      <div class="titles">
+        <h1>静域 QuietZone</h1>
+        <p id="srcNote">正在读取数据源…</p>
+      </div>
+    </div>
+    <div class="meta">
+      <span class="chip" id="srcBadge">—</span>
+      <span class="chip"><i class="dot" id="linkDot"></i><span id="linkText">连接中</span></span>
+      <span class="clock" id="clock">--:--:--</span>
+    </div>
+  </header>
+
+  <div class="notice" id="demoBanner" hidden>
+    当前显示的是 <strong>模拟演示数据</strong>，不是真实测量。
+    接上板卡后用 <code>--source serial</code> 启动，页面会直接读取 CP210x UART 的 QZ 遥测。
+  </div>
+  <div class="notice err" id="errBanner" hidden></div>
+
+  <section class="hero card">
+    <div class="heroStates">
+      <div class="heroBlock">
+        <div class="heroLabel">当前声压级 dB(A)</div>
+        <div class="heroValue xl" id="splValue">—</div>
+        <div class="heroSub" id="splSub">—</div>
+      </div>
+      <div class="heroBlock">
+        <div class="heroLabel">当前状态</div>
+        <div class="heroValue" id="stateValue">—</div>
+        <div class="heroSub" id="stateSub">—</div>
+      </div>
+    </div>
+    <div class="heroSide" id="heroSide"></div>
+  </section>
+
+  <section class="focusBar warning" id="focusBar" aria-live="polite">
+    <span class="focusTag" id="focusTag">管理提醒</span>
+    <div class="focusCopy">
+      <div class="focusTitle"><strong id="focusTitle">正在汇总关注项…</strong><span id="focusMetric"></span></div>
+      <div class="focusDetail" id="focusDetail">页面会根据实时遥测自动突出最需要处理的事项。</div>
+    </div>
+    <a class="focusAction" id="focusAction" href="#attentionCard">查看处置建议</a>
+  </section>
+
+  <section class="priorityGrid" aria-label="首要实时数据">
+    <div class="card priorityDoa">
+      <h3>声源方位</h3>
+      <div class="hint">方位 0°=东、90°=北，逆时针为正。近 30 秒内至少 3 帧落在 ±25° 内判为“已确认”，帧数不足或角度发散只标“待复核”；静默超过 30 秒显示“待更新”。</div>
+      <div class="doa" id="doaBox"></div>
+    </div>
+    <div class="card priorityMic">
+      <h3>四路麦克风</h3>
+      <div class="hint">直接显示遥测字段 r0_10–r3_10（dBFS），条长按四路线性幅度归一。</div>
+      <div class="mics" id="micBars"></div>
+    </div>
+    <div class="card prioritySpl">
+      <h3>声压趋势</h3>
+      <div class="hint">当前声压级、10 秒均值与 60 秒均值；单位 dB(A)，由固件 A 计权显示口径给出。</div>
+      <div class="chartbox priorityChart"><canvas id="splChart"></canvas></div>
+    </div>
+  </section>
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="card historyCard" aria-labelledby="historyTitle">
+    <div class="historyHead">
+      <div>
+        <h3 id="historyTitle">噪音日历</h3>
+        <div class="hint">选择日期查看当天每 15 分钟的声压均值与峰值；日历圆点表示该日已有实测记录，所有图表只使用本机持久化的真实数据。</div>
+      </div>
+      <div class="calendarNav" aria-label="月份切换">
+        <button class="calNavBtn" id="calPrev" type="button" aria-label="上个月">‹</button>
+        <strong id="calMonth">—</strong>
+        <button class="calNavBtn" id="calNext" type="button" aria-label="下个月">›</button>
+      </div>
+    </div>
+
+    <div class="calendarLayout">
+      <div class="calendarPane">
+        <div class="calendarWeekdays" aria-hidden="true">
+          <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+        </div>
+        <div class="calendarGrid" id="calendarGrid" role="grid" aria-label="选择日期"></div>
+        <div class="calendarLegend">
+          <span><i class="calDot has"></i>有数据</span>
+          <span><i class="calDot today"></i>今天</span>
+          <span><i class="calDot selected"></i>已选择</span>
+        </div>
+      </div>
+
+      <div class="dayPanel">
+        <div class="dayHead">
+          <div>
+            <div class="dayEyebrow">当日分时噪音</div>
+            <h4 id="dayTitle">—</h4>
+          </div>
+          <div class="daySummary" id="daySummary"></div>
+        </div>
+        <div class="dayVisuals" id="dayVisuals">
+          <div class="doaFrequency">
+            <div class="doaFrequencyHead">
+              <span>声源方位频率</span>
+              <strong id="doaPeakText">—</strong>
+            </div>
+            <div class="doaFrequencyRing" id="doaRing"></div>
+            <div class="doaScale" aria-label="蓝色由浅到深表示出现频率由低到高">
+              <span>低频</span><i></i><span>高频</span>
+            </div>
+            <div class="doaFrequencyNote" id="doaFrequencyNote">—</div>
+          </div>
+          <div class="chartbox dayChartBox" id="dayChartBox">
+            <canvas id="dayChart"></canvas>
+          </div>
+        </div>
+        <div class="empty dayEmpty" id="dayEmpty" hidden></div>
+        <div class="dayFootnote" id="dayFootnote">—</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="split even">
+    <div class="card" id="attentionCard">
+      <h3>需要关注</h3>
+      <div class="hint">按严重程度排序；每条都写明依据哪个 UART 字段或哪个项目判读条件</div>
+      <div class="list" id="attList"></div>
+    </div>
+    <div class="card">
+      <h3>会话状态占比</h3>
+      <div class="hint">按采样时间累计（页面启动至今）</div>
+      <div class="share" id="shareBar"></div>
+      <div class="legend" id="shareLegend"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3>状态变化时间轴</h3>
+    <div class="hint">从 UART state 的变化推导；最新变化在最上面</div>
+    <div class="events" id="eventList"></div>
+  </section>
+
+  <section class="stack">
+    <details class="card" open><summary>区间统计摘要</summary><div id="summaryBox"></div></details>
+    <details class="card"><summary>最近采样明细</summary><div id="samplesBox"></div></details>
+    <details class="card"><summary>UART 接口字段与地址（页面上每个数字的来源）</summary><div id="regBox"></div></details>
+    <details class="card"><summary>实时门控与判读口径</summary><div id="thBox"></div></details>
+  </section>
+
+  <footer class="foot">
+    <div class="btns">
+      <a class="btn primary" href="/api/export.csv">导出 CSV</a>
+      <button class="btn" data-cmd="pause">暂停统计</button>
+      <button class="btn" data-cmd="resume">继续统计</button>
+      <button class="btn warn" data-cmd="clear">清空统计</button>
+      <button class="btn danger" data-cmd="soft_reset">软复位</button>
+    </div>
+    <div class="muted" id="footNote">—</div>
+  </footer>
+
+  <div class="toast" id="toast" hidden></div>
+</div>
+
+<script src="chart.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

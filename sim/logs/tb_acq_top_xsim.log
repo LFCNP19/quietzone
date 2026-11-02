@@ -1,0 +1,30 @@
+﻿
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Sat Oct 31 15:23:53 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/acq_sim/xsim_script.tcl
+# xsim {acq_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+[5110000] reset released, start acquisition...
+
+================ RESULT ================
+ BRAM writes total     : 96
+ data errors           : 0
+ address sequence errs : 0
+ sample_valid pulses   : 96
+ frames read by PS     : 6
+ writes per frame      : 16 (expect 16)
+----------------------------------------
+ bank0 (addr 0..15)      written 48 times
+ bank1 (addr 16..31)     written 48 times
+========================================
+ >>> PASS <<<
+$finish called at time : 1964610 ns : File "C:/Users/15718/FPGAwork/quietzone_submission/sim/tb/tb_acq_top.v" Line 233
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Oct 31 15:23:55 2026...

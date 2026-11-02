@@ -1,0 +1,453 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Wed Oct 28 22:27:18 2026
+| Host         : DESKTOP-031C4L8 running 64-bit major release  (build 9200)
+| Command      : report_drc -file system_wrapper_drc_routed.rpt -pb system_wrapper_drc_routed.pb -rpx system_wrapper_drc_routed.rpx
+| Design       : system_wrapper
+| Device       : xc7z020clg400-2
+| Speed File   : -2
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 79
++-----------+----------+----------------------------+--------+
+| Rule      | Severity | Description                | Checks |
++-----------+----------+----------------------------+--------+
+| CHECK-3   | Warning  | Report rule limit reached  | 1      |
+| DPIP-1    | Warning  | Input pipelining           | 7      |
+| DPOP-1    | Warning  | PREG Output pipelining     | 7      |
+| DPOP-2    | Warning  | MREG Output pipelining     | 7      |
+| PDCN-1569 | Warning  | LUT equation term check    | 6      |
+| RBOR-1    | Warning  | RAMB output registers      | 30     |
+| REQP-1839 | Warning  | RAMB36 async control check | 20     |
+| RTSTAT-10 | Warning  | No routable loads          | 1      |
++-----------+----------+----------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+CHECK-3#1 Warning
+Report rule limit reached  
+REQP-1839 rule limit reached: 20 violations have been found.
+Related violations: <none>
+
+DPIP-1#1 Warning
+Input pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/mux0 input system_i/lcd_led_top_0/inst/u_ring/mux0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/muy0 input system_i/lcd_led_top_0/inst/u_ring/muy0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#3 Warning
+Input pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/muy0 input system_i/lcd_led_top_0/inst/u_ring/muy0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#4 Warning
+Input pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/rpm input system_i/lcd_led_top_0/inst/u_ring/rpm/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#5 Warning
+Input pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/rpm input system_i/lcd_led_top_0/inst/u_ring/rpm/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#6 Warning
+Input pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/rpn input system_i/lcd_led_top_0/inst/u_ring/rpn/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#7 Warning
+Input pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/rpn0 input system_i/lcd_led_top_0/inst/u_ring/rpn0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-1#1 Warning
+PREG Output pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/arc_l output system_i/lcd_led_top_0/inst/u_ring/arc_l/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#2 Warning
+PREG Output pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/mux0 output system_i/lcd_led_top_0/inst/u_ring/mux0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#3 Warning
+PREG Output pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/muy0 output system_i/lcd_led_top_0/inst/u_ring/muy0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#4 Warning
+PREG Output pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/rpm output system_i/lcd_led_top_0/inst/u_ring/rpm/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#5 Warning
+PREG Output pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/rpm0 output system_i/lcd_led_top_0/inst/u_ring/rpm0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#6 Warning
+PREG Output pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/rpn output system_i/lcd_led_top_0/inst/u_ring/rpn/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#7 Warning
+PREG Output pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/rpn0 output system_i/lcd_led_top_0/inst/u_ring/rpn0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-2#1 Warning
+MREG Output pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/arc_l multiplier stage system_i/lcd_led_top_0/inst/u_ring/arc_l/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#2 Warning
+MREG Output pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/mux0 multiplier stage system_i/lcd_led_top_0/inst/u_ring/mux0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#3 Warning
+MREG Output pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/muy0 multiplier stage system_i/lcd_led_top_0/inst/u_ring/muy0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#4 Warning
+MREG Output pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/rpm multiplier stage system_i/lcd_led_top_0/inst/u_ring/rpm/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#5 Warning
+MREG Output pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/rpm0 multiplier stage system_i/lcd_led_top_0/inst/u_ring/rpm0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#6 Warning
+MREG Output pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/rpn multiplier stage system_i/lcd_led_top_0/inst/u_ring/rpn/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#7 Warning
+MREG Output pipelining  
+DSP system_i/lcd_led_top_0/inst/u_ring/rpn0 multiplier stage system_i/lcd_led_top_0/inst/u_ring/rpn0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+PDCN-1569#1 Warning
+LUT equation term check  
+Used physical LUT pin 'A1' of cell system_i/axi_interconnect_0/m02_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin system_i/axi_interconnect_0/m02_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) in site SLICE_X44Y100 is not included in the LUT equation: 'O6=(A6)+((~A6)*(~A5)*A4)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#2 Warning
+LUT equation term check  
+Used physical LUT pin 'A1' of cell system_i/axi_interconnect_0/m02_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin system_i/axi_interconnect_0/m02_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) in site SLICE_X54Y103 is not included in the LUT equation: 'O6=(A5)+((~A5)*(~A4)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#3 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell system_i/axi_interconnect_0/m02_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin system_i/axi_interconnect_0/m02_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) in site SLICE_X55Y71 is not included in the LUT equation: 'O6=(A2)+((~A2)*(~A5)*A4)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#4 Warning
+LUT equation term check  
+Used physical LUT pin 'A4' of cell system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) in site SLICE_X58Y92 is not included in the LUT equation: 'O6=(A5)+((~A5)*(~A1)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#5 Warning
+LUT equation term check  
+Used physical LUT pin 'A5' of cell system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) in site SLICE_X66Y90 is not included in the LUT equation: 'O6=(A6)+((~A6)*(~A2)*A3)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#6 Warning
+LUT equation term check  
+Used physical LUT pin 'A6' of cell system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) in site SLICE_X47Y80 is not included in the LUT equation: 'O6=(A5)+((~A5)*(~A3)*A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+RBOR-1#1 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#2 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_1 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#3 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_2 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#4 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_3 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#5 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_4 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#6 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_5 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#7 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_6 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#8 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_7 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#9 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_1_0_0 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#10 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_1_0_1 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#11 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_1_0_2 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#12 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_1_0_3 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#13 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_1_0_4 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#14 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_1_0_5 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#15 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_1_0_7 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#16 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_2_0_0 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#17 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_2_0_1 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#18 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_2_0_2 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#19 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_2_0_3 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#20 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_2_0_4 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#21 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_2_0_5 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#22 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_2_0_6 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#23 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_2_0_7 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#24 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_3_0_0 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#25 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_3_0_1 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#26 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_3_0_2 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#27 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_3_0_3 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#28 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_3_0_4 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#29 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_3_0_5 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+RBOR-1#30 Warning
+RAMB output registers  
+RAMB system_i/lcd_led_top_0/inst/u_fb/mem_reg_3_0_7 output DOB (1) is connected to asynchronous registers, if you use synchronous controls you will get better results both in area and delay (RAMB has synchronous registers built in).
+Related violations: <none>
+
+REQP-1839#1 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ADDRBWRADDR[0] (net: system_i/lcd_led_top_0/inst/u_fb/Q[0]) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#2 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ADDRBWRADDR[10] (net: system_i/lcd_led_top_0/inst/u_fb/Q[10]) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[10]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#3 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ADDRBWRADDR[11] (net: system_i/lcd_led_top_0/inst/u_fb/Q[11]) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[11]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#4 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ADDRBWRADDR[12] (net: system_i/lcd_led_top_0/inst/u_fb/Q[12]) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[12]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#5 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ADDRBWRADDR[13] (net: system_i/lcd_led_top_0/inst/u_fb/Q[13]) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[13]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#6 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ADDRBWRADDR[14] (net: system_i/lcd_led_top_0/inst/u_fb/Q[14]) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[14]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#7 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ADDRBWRADDR[1] (net: system_i/lcd_led_top_0/inst/u_fb/Q[1]) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#8 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ADDRBWRADDR[2] (net: system_i/lcd_led_top_0/inst/u_fb/Q[2]) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#9 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ADDRBWRADDR[3] (net: system_i/lcd_led_top_0/inst/u_fb/Q[3]) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#10 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ADDRBWRADDR[4] (net: system_i/lcd_led_top_0/inst/u_fb/Q[4]) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#11 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ADDRBWRADDR[5] (net: system_i/lcd_led_top_0/inst/u_fb/Q[5]) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#12 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ADDRBWRADDR[6] (net: system_i/lcd_led_top_0/inst/u_fb/Q[6]) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#13 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ADDRBWRADDR[7] (net: system_i/lcd_led_top_0/inst/u_fb/Q[7]) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#14 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ADDRBWRADDR[8] (net: system_i/lcd_led_top_0/inst/u_fb/Q[8]) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#15 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ADDRBWRADDR[9] (net: system_i/lcd_led_top_0/inst/u_fb/Q[9]) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[9]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#16 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/ENBWREN (net: system_i/lcd_led_top_0/inst/u_fb/spi_pix_req) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_req_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#17 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/RSTRAMB (net: system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0_0) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[10]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#18 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/RSTRAMB (net: system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0_0) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[11]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#19 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/RSTRAMB (net: system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0_0) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[12]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#20 Warning
+RAMB36 async control check  
+The RAMB36E1 system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0 has an input control pin system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0/RSTRAMB (net: system_i/lcd_led_top_0/inst/u_fb/mem_reg_0_0_0_0) which is driven by a register (system_i/lcd_led_top_0/inst/u_lcd/o_pix_addr_reg[13]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+66 net(s) have no routable loads. The problem bus(es) and/or net(s) are system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i,
+system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/user_valid,
+system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i,
+system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb,
+system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i,
+system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0],
+system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0],
+system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i,
+system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/user_valid,
+system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i,
+system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb,
+system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i,
+system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0],
+system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0],
+system_i/axi_interconnect_0/m01_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i
+ (the first 15 of 42 listed).
+Related violations: <none>
+
+

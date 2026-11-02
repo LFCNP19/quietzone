@@ -1,0 +1,8 @@
+﻿
+Testbench      Result Log                    
+---------      ------ ---                    
+tb_acq_top     PASS   tb_acq_top_xsim.log    
+tb_ws2812b_drv PASS   tb_ws2812b_drv_xsim.log
+
+
+

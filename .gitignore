@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Vivado / Vitis 工程缓存（仓库只保留精选的报告与截图）
+*.jou
+*.str
+*.Xil/
+*.cache/
+*.hw/
+*.sim/
+*.ip_user_files/
+*.runs/
+*.gen/
+*.srcs/
+*.xpr
+*.dcp
+
+# 运行期日志（sim/logs 下的 XSim 原始输出是证据，不在此列）
+board/run/*.log
+board/run/*.err
+_stats.log
+_stats.err
+_bridge.log
+_bridge.err
+
+# 系统与编辑器
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/

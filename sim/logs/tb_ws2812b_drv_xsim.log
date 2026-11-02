@@ -1,0 +1,27 @@
+﻿
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Sat Oct 31 15:23:58 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/ws_sim/xsim_script.tcl
+# xsim {ws_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+=== tb_ws2812b_drv 开始 ===
+[T1] 一帧 16 颗灯：位流还原 + 每位宽度 + 帧前 RESET
+  [信息] 帧前 RESET = 300040 ns，帧尾低电平 = 15024 拍
+[T2] 忙时 i_update 被忽略（不打断、不补发）
+[T3] 帧间连续更新
+[T4] GRB 顺序：第 0 颗 0xA1B2C3，先发 G
+[R1] 随机两帧
+[T5] LED_NUM=8 参数化：方案书 §4.9 标称 8 颗灯
+  [信息] 8 颗灯帧尾低电平 = 15024 拍
+
+RESULT: PASS  (checks=30, errors=0)
+$finish called at time : 7300040 ns : File "C:/Users/15718/FPGAwork/quietzone_submission/sim/tb/tb_ws2812b_drv.sv" Line 495
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Oct 31 15:24:01 2026...

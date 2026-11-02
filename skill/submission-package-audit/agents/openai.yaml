@@ -1,0 +1,3 @@
+interface:
+  display_name: "Submission Package Audit"
+  short_description: "Audit competition packages for blockers, consistency, and reproducibility."
